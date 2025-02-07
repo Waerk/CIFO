@@ -71,19 +71,16 @@
 			<input type="hidden" name="max_file_size" value="1240000">
 			<input type="file" accept=".jpg, .jpeg, .gif, .png" name="fichero" id="file-with-preview" required>
 			<br>
-			<select name="carpeta" id="carpeta" required>
-        <?php
-        // Obtener todas las carpetas dentro de "imagenes"
-        $carpetas = array_filter(glob('imagenes/*'), 'is_dir');
-
-        // Mostrar las carpetas como opciones en el select
-        foreach ($carpetas as $carpeta) {
-            $nombreCarpeta = basename($carpeta);  // Obtener solo el nombre de la carpeta
-            echo "<option value='$nombreCarpeta'>$nombreCarpeta</option>";
-        }
-        ?>
-    </select>
-    <br>
+			<label for="carpeta">Selecciona una carpeta:</label>
+    		<select name="carpeta" required>
+        	<option value="alemanes">Alemanes</option>
+        	<option value="americanos">Americanos</option>
+        	<option value="britanicos">Britanicos</option>
+        	<option value="españoles">Españoles</option>
+        	<option value="franceses">Franceses</option>
+        	<option value="italianos">Italianos</option>
+        	<option value="japoneses">Japoneses</option>
+    		</select>
 			<input type="submit" value="enviar">.
 			<figure>
 			<img src="imagenes/default.png" id="preview-image" width="200">
@@ -128,7 +125,101 @@
 	       echo "<figure class='imgGallery'><img class='imgSmall' src='$directorioAme/$foto'></figure>";
 	   ?>
 	   </div>
-            </section>
+	   <h3 class="categoriasTitle">Classicos Alemanes</h3>
+	   <div class="cajaAlemanes" id="galeriaAlemanes">
+	   <?php 
+	   $directorioAle = "imagenes/alemanes";
+	   $archivos =[];
+	   
+	   $handler = opendir($directorioAle);
+	   
+	   while ($file = readdir($handler))
+	       if ($file!="."&& $file!="..")
+	           $archivos[] = $file;
+	       
+	   closedir($handler);
+	   sort($archivos);
+	   
+	   foreach($archivos as $foto)
+	       echo "<figure class='imgGallery'><img class='imgSmall' src='$directorioAle/$foto'></figure>";
+	   ?>
+	   </div>
+	   <h3 class="categoriasTitle">Classicos Italianos</h3>
+	   <div class="cajaItalianos" id="galeriaItalianos">
+	   <?php 
+	   $directorioIta = "imagenes/italianos";
+	   $archivos =[];
+	   
+	   $handler = opendir($directorioIta);
+	   
+	   while ($file = readdir($handler))
+	       if ($file!="."&& $file!="..")
+	           $archivos[] = $file;
+	       
+	   closedir($handler);
+	   sort($archivos);
+	   
+	   foreach($archivos as $foto)
+	       echo "<figure class='imgGallery'><img class='imgSmall' src='$directorioIta/$foto'></figure>";
+	   ?>
+	   </div>
+	   <h3 class="categoriasTitle">Classicos Britanicos</h3>
+	   <div class="cajaBritanicos" id="galeriaBritanicos">
+	   <?php 
+	   $directorioBri = "imagenes/britanicos";
+	   $archivos =[];
+	   
+	   $handler = opendir($directorioBri);
+	   
+	   while ($file = readdir($handler))
+	       if ($file!="."&& $file!="..")
+	           $archivos[] = $file;
+	       
+	   closedir($handler);
+	   sort($archivos);
+	   
+	   foreach($archivos as $foto)
+	       echo "<figure class='imgGallery'><img class='imgSmall' src='$directorioBri/$foto'></figure>";
+	   ?>
+	   </div>
+	   <h3 class="categoriasTitle">Classicos Españoles</h3>
+	   <div class="cajaEspañoles" id="galeriaEspañoles">
+	   <?php 
+	   $directorioEsp = "imagenes/españoles";
+	   $archivos =[];
+	   
+	   $handler = opendir($directorioEsp);
+	   
+	   while ($file = readdir($handler))
+	       if ($file!="."&& $file!="..")
+	           $archivos[] = $file;
+	       
+	   closedir($handler);
+	   sort($archivos);
+	   
+	   foreach($archivos as $foto)
+	       echo "<figure class='imgGallery'><img class='imgSmall' src='$directorioEsp/$foto'></figure>";
+	   ?>
+	   </div>
+	   <h3 class="categoriasTitle">Classicos Franceses</h3>
+	   <div class="cajaFranceses" id="galeriaFranceses">
+	   <?php 
+	   $directorioFra = "imagenes/franceses";
+	   $archivos =[];
+	   
+	   $handler = opendir($directorioFra);
+	   
+	   while ($file = readdir($handler))
+	       if ($file!="."&& $file!="..")
+	           $archivos[] = $file;
+	       
+	   closedir($handler);
+	   sort($archivos);
+	   
+	   foreach($archivos as $foto)
+	       echo "<figure class='imgGallery'><img class='imgSmall' src='$directorioFra/$foto'></figure>";
+	   ?>
+      </section>
         </main>
         <footer>
             <div class="informacion">

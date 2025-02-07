@@ -2,14 +2,20 @@
 require_once 'exceptions/UploadException.php';
 require_once 'libraries/Upload.php';
 
-try{
-    $carpetaSeleccionada = isset($_POST['carpeta']) ? $_POST['carpeta'] : 'imagenes'; // Si no se selecciona carpeta, usar 'imagenes' como predeterminada
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Capturamos la carpeta seleccionada por el usuario desde el formulario
+    $carpetaDestino = 'imagenes/' . $_POST['carpeta'] . '/';
     
-    // Verificar que la carpeta seleccionada existe
-    $directorio = "imagenes/$carpetaSeleccionada"; 
+    // Verificamos si la carpeta existe, si no, la creamos
+    if (!is_dir($carpetaDestino)) {
+        mkdir($carpetaDestino, 0777, true); // Crea la carpeta con permisos de lectura/escritura
+    }
+    
+
+try{
     $ruta = Upload::save(
-        'fichero', 'imagenes', true, 1048576, 'image/*', 'img_',);
+        'fichero', $carpetaDestino, true, 1048576, 'image/*', 'img_');
     echo "<p>Exito en la operacion, fichero subido a $ruta.</p>";
 }catch(UploadException $e){
     echo "<p>Error: ".$e->getMessage()."</p>";
-}
+}}
