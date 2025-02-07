@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/galeria.css">
 	<link rel="icon" href="imagenes/logo/logo.png" type="image/x-icon">
     <script src="javascript/galeria.js"></script>
+    <script src="javascript/Preview.js"></script>
 </head>
 <body>
     <?php
