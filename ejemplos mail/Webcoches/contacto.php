@@ -15,7 +15,7 @@
     <main>
     <div class="formulario-contacto">
         <h2>Contacta con nosotros</h2>
-        <form action="functionMail.php" method="POST">
+        <form action="claseEmail/emailSend.php" method="POST">
             <label>Nombre de usuario:</label>
             <input type="text" name="username" placeholder="Ingresa tu nombre de usuario" required>
 
@@ -31,7 +31,7 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
-</main>
+</main>	
 <footer>
     <div class="informacion">
         <h3>Información de la Empresa</h3>
