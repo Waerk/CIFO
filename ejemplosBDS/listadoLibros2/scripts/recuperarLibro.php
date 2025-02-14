@@ -1,11 +1,14 @@
 <?php
-$id = $_GET['id'];
+$id = intval($_GET['id']);
 
 // lanza la consulta
 $resultado = $conexion->query("SELECT * FROM libros WHERE id=$id");
 
+if(!$resultado->num_rows)
+    throw new Exception('No hay resultados');
+
 //prepara una lista de libros
-$libro = $resultado->fetch_object(); 
+$libros = $resultado->fetch_object('Libro'); 
 
 
 

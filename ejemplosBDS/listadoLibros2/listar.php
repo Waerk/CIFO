@@ -13,4 +13,4 @@ include 'scripts/recuperarLibros.php';
 
 //carga la vista de listado
 //include 'views/booklist.php';
-include 'views/booktable.php';
+include 'views/detalles.php';

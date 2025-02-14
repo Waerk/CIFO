@@ -1,4 +1,4 @@
-<?php
+a<?php
 // Parametros de configuracion del autoload
 define('AUTOLOAD_DIRECTORIES', ['models']);
 // Parametros de configuracion de la BDD
