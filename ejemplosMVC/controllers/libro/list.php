@@ -1,5 +1,9 @@
 <?php 
-$libros= Libro::all();
+
+
+$libros = Libro::all();
+
+
 
 require '../views/libro/lista.php';
 ?>

@@ -1,3 +1,7 @@
+<?php 
+require '../template/template.php';
+    cabecera();
+    ?>
 <form method="POST" action="index.php?controlador=libro/store">
 	<label>ISBN</label>
 	<input type="text" name="isbn">
@@ -30,3 +34,5 @@
 <div class="centrado">
 	<a class="button" href="index.php?controlador=libro/list">Lista de libros</a>
 </div>
+</body>
+</html>

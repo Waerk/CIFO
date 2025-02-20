@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<title>ERROR</title>
-		<link rel="stylesheet" type="text/css"
-		href="https://robertsallent.com/css/generic.css">
-	</head>
-	<body>
+<?php 
+require '../template/template.php';
+    cabecera();
+    ?>
 		<h1>Error</h1>
 		<menu>
 			<li><a href="index.php">Inicio</a></li>

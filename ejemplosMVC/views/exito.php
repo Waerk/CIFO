@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<title>Exito</title>
-		<link rel="stylesheet" type="text/css"
-		href="https://robertsallent.com/css/generic.css">
-	</head>
-	<body>
-		<h1>Exito</h1>
-		<menu>
-			<li><a href="index.php">Inicio</a></li>
-			<li><a href="index.php?controlador=libro/list">Lista de libros</a></li>
-			<li><a href="index.php?controlador=libro/create">Nuevo libro</a></li>
-		</menu>
-		<div class="error">
+<?php 
+require '../template/template.php';
+    cabecera();
+    ?>
+		<div class="success">
 			<h2>Exito</h2>
 			<p><?= $mensaje?></p>
 		</div>
