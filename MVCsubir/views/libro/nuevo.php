@@ -1,5 +1,5 @@
 <?php 
-require'../template/template.php';
+require '../template/template.php';
     cabecera();
     ?>
 <form method="POST" action="index.php?controlador=libro/store">

@@ -1,9 +1,9 @@
-<?php
+<?php 
 require '../template/template.php';
-cabecera();
-?>
-		<div class="error">
-			<h2>Error</h2>
+    cabecera();
+    ?>
+		<div class="success">
+			<h2>Exito</h2>
 			<p><?= $mensaje?></p>
 		</div>
 		<div class="centrado">
