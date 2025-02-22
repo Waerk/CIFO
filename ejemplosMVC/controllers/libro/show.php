@@ -9,5 +9,9 @@ $id = intval($_GET['id']); //toma el id
 if(empty($libro = Libro::find($id)))
     throw new NotFoundException("No existe el libro $id.");
 
+    $ejemplares = $libro->hasMany('Ejemplar');
+    
+    $temas = $libro->belongsToMany('Tema', 'temas_libros');
+
 //carga la vista de detalles del libro
 require '../views/libro/detalles.php';

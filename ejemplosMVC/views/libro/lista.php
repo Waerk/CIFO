@@ -1,43 +1,29 @@
-<?php 
+<?php
 require '../template/template.php';
-    cabecera();
-    ?>
-	<h2>Lista de libros</h2>
+cabecera();
+?>
+	<h2>Lista de Libros</h2>
 	<form method="POST" class="search" action="index.php?controlador=libro/search">
 		<label>Campo:</label>
 		<select name="campo">
-			<option value="dni"
-			<?= !empty($campo) && $campo=='dni' ? 'selected' : ''?>>DNI</option>
-			<option value="nombre"
-			<?= !empty($campo) && $campo=='nombre'? 'selected' : ''?>>Nombre</option>
-			<option value="apellidos"
-			<?= !empty($campo) && $campo=='apellidos' ? 'selected' : ''?>>Apellidos</option>
-			<option value="nacimiento"
-			<?= !empty($campo) && $campo=='nacimiento' ? 'selected' : ''?>>Nacimiento</option>
-			<option value="email"
-			<?= !empty($campo) && $campo=='email' ? 'selected' : ''?>>Email</option>
-			<option value="direccion"
-			<?= !empty($campo) && $campo=='direccion' ? 'selected' : ''?>>Direccion</option>
-			<option value="cp"
-			<?= !empty($campo) && $campo=='cp' ? 'selected' : ''?>>Codigo postal</option>
-			<option value="poblacion"
-			<?= !empty($campo) && $campo=='poblacion' ? 'selected' : ''?>>Poblacion</option>
-			<option value="provincia"
-			<?= !empty($campo) && $campo=='provincia' ? 'selected' : ''?>>Provincia</option>		
-			<option value="apellidos"
-			<?= !empty($campo) && $campo=='telefono' ? 'selected' : ''?>>Telefono</option>
+			<option value="titulo"
+			<?= !empty($campo) && $campo=='titulo' ? 'selected' : ''?>>Titulo</option>
+			<option value="editorial"
+			<?= !empty($campo) && $campo=='editorial'? 'selected' : ''?>>Editorial</option>
+			<option value="autor"
+			<?= !empty($campo) && $campo=='autor' ? 'selected' : ''?>>Autor</option>
 		</select>
 		
 		<label>Valor:</label>
 		<input type="text" name="valor" value="<?= $valor ?? ''?>">
 		<label>Orden:</label>
 			<select name="orden">
-				<option value="dni"
-				<?= !empty($orden) && $orden=='dni'? 'selected' : ''?>>DNI</option>
-				<option value="nombre"
-				<?= !empty($orden) && $orden=='nombre'? 'selected' : ''?>>Nombre</option>
+				<option value="titulo"
+				<?= !empty($orden) && $orden=='titulo'? 'selected' : ''?>>Titulo</option>
+				<option value="editorial"
+				<?= !empty($orden) && $orden=='editorial'? 'selected' : ''?>>Editorial</option>
 				<option value="autor"
-				<?= !empty($orden) && $orden=='apellidos'? 'selected': ''?>>Apellidos</option>
+				<?= !empty($orden) && $orden=='autor'? 'selected': ''?>>Autor</option>
 			</select>
 		<input type="radio" name="sentido" value="ASC"
 			<?= empty($sentido) || $sentido=='ASC'? 'checked': ''?>>
@@ -48,7 +34,7 @@ require '../template/template.php';
 			
 		<input type="submit" class="button" name="filtro" value="Filtrar">
 		
-		<a class="button" href="index.php?controlador=libro/list">Quitar filtros</a>
+		<a class="button" href="index.php?controlador=socio/list">Quitar filtros</a>
 	</form>
 	<table class="bloqueCentrado w100">
 		<tr>

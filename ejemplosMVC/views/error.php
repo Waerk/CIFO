@@ -1,6 +1,6 @@
 <?php
-require '../template/template.php';
-cabecera();
+    require '../template/template.php';
+    cabecera();
 ?>
 		<div class="error">
 			<h2>Error</h2>

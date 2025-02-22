@@ -20,4 +20,4 @@ if(empty($_POST['guardar']))
     
     //prepara un mensaje y carga la vista de exito
     $mensaje = "Guardado del socio ".$_POST['nombre']."correcto.";
-    require '../views/exito.php';
+    require '../views/exitoSo.php';

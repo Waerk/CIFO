@@ -13,7 +13,7 @@ cabecera();
 	<input type="text" name="apellidos">
 	<br>
 	<label>Fecha de Nacimiento</label>
-	<input type="text" name="nacimiento">
+	<input type="date" name="nacimiento">
 	<br>
 	<label>Email</label>
 	<input type="text" name="email">

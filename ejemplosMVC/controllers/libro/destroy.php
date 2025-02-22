@@ -9,5 +9,5 @@
        
        $libro->deleteObject();
        
-       $mensaje = "borrado del libro $libro->titulo, de $libro->autor correcto.";
+       $mensaje = "Borrado del libro $libro->titulo, de $libro->autor correcto.";
        require '../views/exito.php';

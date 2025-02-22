@@ -25,7 +25,7 @@ require '../template/template.php';
 			Catalan</option>
 			<option value="Inglés" <?= $libro->idioma=='Inglés'? 'selected' : ''?>>
 			Inglés</option>
-			<option value="Otros" <?= $libros->idioma=='Otros'? 'selected' : ''?>>
+			<option value="Otros" <?= $libro->idioma=='Otros'? 'selected' : ''?>>
 			Otros</option>
 		</select>
 		<br>

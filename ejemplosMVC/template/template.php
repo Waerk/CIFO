@@ -9,7 +9,7 @@ function cabecera(){?>
 		href="https://robertsallent.com/css/generic.css">
 	</head>
 	<body>
-		<h1>Biblioteca</h1>
+		<h1>Portada de la biblioteca</h1>
 		<menu class="menu">
 			<li><a href="index.php" class="activo">Inicio</a></li>
 			<li><a href="index.php?controlador=libro/list">Lista de libros</a></li>
@@ -18,3 +18,4 @@ function cabecera(){?>
 			<li><a href="index.php?controlador=socio/create">Nuevo Socio</a>
 		</menu>
 <?php }?>
+  
