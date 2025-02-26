@@ -39,9 +39,9 @@ document.addEventListener('keydown', (event) => {
   });
 
   function evaluar(){
-    if(aceptar.checked)
-      cookies.remove();
-    else
+    if(aceptar.checked){	 
+		cookies.remove();
+	}else
     mensaje.innerHTML = '¡Acepta las cookies o vete del sitio!';
   }
   

@@ -12,15 +12,19 @@
 <body>
 	<?php 
 	require_once 'template/cochesHeader.php';
-	cabecera()?>
+	cabecera()
+	?>
+	<?php setcookie('cookiesAceptadas', "Aplicaciones web", 0);?>
+	<?php if(!isset($_COOKIE['cookiesAceptadas'])){?>
     <div id="cookies">
         <div>
             <input type="checkbox" id="aceptar">
-            <label>Aceptar todas las cookies</label> <br>
-            <button onclick="evaluar()">Aceptar</button><br>
+            <label>Aceptar to	das las cookies</label> <br>
+            <button onclick="evaluar()">Aceptar</button> <br>
             <output id="mensaje"></output>
         </div>
     </div>
+    <?php } ?>
  <div class="mainDiv">
     <nav class="flex1 leftmigas">
         <div class="migas">    

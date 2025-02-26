@@ -13,9 +13,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
 try{
+    //guarda el fichero actual
     $ruta = Upload::save(
-        'fichero', $carpetaDestino, true, 1048576, 'image/*', 'img_');
+        'fichero', $carpetaDestino, true, 2000000, 'image/*', 'img_');
     echo "<p>Exito en la operacion, fichero subido a $ruta.</p>";
 }catch(UploadException $e){
-    echo "<p>Error: ".$e->getMessage()."</p>";
-}}
+    $mensajeError = "Fecha: " . date("Y-m-d H:i:s") . " - Error: " . $e->getMessage() . "\n";
+    $logFilePath = 'logs/error.log';
+// Escribir el mensaje de error en el archivo error.log
+    try{
+        // Si el archivo error.log no existe, se crea. Si existe, se añaden nuevos datos al final
+    file_put_contents($logFilePath, $mensajeError, FILE_APPEND);
+    } catch(Exception $e) {
+        echo "<p> Error al intentar escribir en el archivo de log: " . $e->getMessage() . "</p>";
+    }
+    
+    echo "<p>Error: " . $e->getMessage()."</p>";
+    }
+}else {
+    echo "<p> Error: No se ha recibido un archivo válido o hay un error en la carga.</p>";
+}

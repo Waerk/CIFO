@@ -69,7 +69,7 @@
         <form method="post" enctype="multipart/form-data" action="upload.php">
 			<label>Sube tu imagen de perfil:</label>
 			<br>
-			<input type="hidden" name="max_file_size" value="1240000">
+			<input type="hidden" name="max_file_size" value="2000000">
 			<input type="file" accept=".jpg, .jpeg, .gif, .png" name="fichero" id="file-with-preview" required>
 			<br>
 			<label for="carpeta">Selecciona una carpeta:</label>
