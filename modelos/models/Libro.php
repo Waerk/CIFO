@@ -54,4 +54,15 @@ class Libro{
     public function __toString():string{
         return "LIBRO $this->id: $this->isbn $this->titulo, de $this->autor";
     }
+    public static function getFiltered(
+        string $campo = 'titulo',
+        string $valor = '',
+        string $orden = 'id',
+        string $sentido = 'ASC'
+        ):array{
+        $consulta = "SELECT * FROM libros WHERE $campo LIKE '%$valor%'
+                     ORDER BY $orden $sentido";
+        
+        return DBMysqli::selectAll($consulta, self::class);
+    }
 }

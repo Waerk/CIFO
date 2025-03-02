@@ -15,15 +15,15 @@
     <main>
     <div class="formulario-contacto">
         <h2>Contacta con nosotros</h2>
-        <form action="#" method="POST">
+        <form action="emailSend.php" method="POST">
             <label>Nombre de usuario:</label>
-            <input type="text" placeholder="Ingresa tu nombre de usuario" required>
+            <input type="text" name="username" placeholder="Ingresa tu nombre de usuario" required>
 
             <label>Correo electrónico:</label>
-            <input type="email" placeholder="Ingresa tu correo electrónico" required>
+            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
 
             <label>Asunto:</label>
-            <input type="text" placeholder="Ingresa tu correo electrónico" required>
+            <input type="text" name="asunto" placeholder="Ingresa tu correo electrónico" required>
 
             <label>Tu mensaje:</label>
             <textarea name="mensaje" placeholder="Escribe tu mensaje aquí" required></textarea>

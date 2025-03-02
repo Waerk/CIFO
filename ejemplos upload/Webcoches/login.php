@@ -19,12 +19,16 @@
                 <source id="videoSource" src="imagenes/video/cobra.mp4" type="video/mp4">
                 Tu navegador no soporta la reproducción de videos.
             </video>
+            <?php if (Session::has('user')){?>
+            	<p>Bienvenido <?= Session::get('user')->userName?>,
+            	<a href='?logout'>Logout</a></p>
+            <?php }else{ ?>
             <div class="cajalogin">
                 <h2 class="login-title">Iniciar sesión</h2>
-                <form action="#" method="POST" class="login-form">
+                <form method="POST" id="login" class="login-form">
                     <div class="cajainputs">
                         <label class="login-label">Nombre de usuario</label>
-                        <input type="text" name="username" class="login-input" placeholder="Nombre de usuario" required>
+                        <input type="text" name="userName" class="login-input" placeholder="Nombre de usuario" required>
                     </div>
                     <div class="cajainputs">
                         <label class="login-label">Contraseña</label>
@@ -35,9 +39,10 @@
                         <label class="remember-label">Recordar contraseña</label>
                     </div>
                     
-                    <button type="submit" class="login-button">Iniciar sesión</button>
+                    <button type="submit" class="login-button" name="login" value="LogIn">Iniciar sesión</button>
 
                 </form>
+             <?php } ?>
                 <div class="register-link">
                     <a href="registro.php" class="register-text">¿No tienes cuenta? Regístrate </a>
                 </div>

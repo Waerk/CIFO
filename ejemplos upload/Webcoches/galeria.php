@@ -64,29 +64,9 @@
                     <img src="imagenes/banderas/france.png" alt="Franceses" class="leftimagen">
                 </a>
             </figure>
-        </div>
-        </nav>
-        <form method="post" enctype="multipart/form-data" action="upload.php">
-			<label>Sube tu imagen de perfil:</label>
-			<br>
-			<input type="hidden" name="max_file_size" value="2000000">
-			<input type="file" accept=".jpg, .jpeg, .gif, .png" name="fichero" id="file-with-preview" required>
-			<br>
-			<label for="carpeta">Selecciona una carpeta:</label>
-    		<select name="carpeta" required>
-        	<option value="alemanes">Alemanes</option>
-        	<option value="americanos">Americanos</option>
-        	<option value="britanicos">Britanicos</option>
-        	<option value="españoles">Españoles</option>
-        	<option value="franceses">Franceses</option>
-        	<option value="italianos">Italianos</option>
-        	<option value="japoneses">Japoneses</option>
-    		</select>
-			<input type="submit" value="enviar">.
-			<figure>
-			<img src="imagenes/default.png" id="preview-image" width="200">
-			</figure>
-		</form>	
+        </div>        
+      </nav>
+        	
             <section class="flex4 gallery" id="galeria">
             <h3 class="categoriasTitle">Classicos Japoneses (JDM)</h3>
              <div id="galeriaJapones" class="cajaJaponeses">
@@ -220,8 +200,31 @@
 	   foreach($archivos as $foto)
 	       echo "<figure class='imgGallery'><img class='imgSmall' src='$directorioFra/$foto'></figure>";
 	   ?>
-      </section>
-        </main>
+	   </div>
+      </section>      
+     </main>
+     <form method="post" enctype="multipart/form-data" action="upload.php" class="subirImagen">
+			<label>Sube tu imagen a la galeria:</label>
+			<br>
+			<input type="hidden" name="max_file_size" value="2000000">
+			<input type="file" accept=".jpg, .jpeg, .gif, .png" name="fichero" id="file-with-preview" required>
+			<br>
+			<label for="carpeta">Selecciona una Categoria:</label>
+    		<select name="carpeta" required>
+        	<option value="alemanes">Alemanes</option>
+        	<option value="americanos">Americanos</option>
+        	<option value="britanicos">Britanicos</option>
+        	<option value="españoles">Españoles</option>
+        	<option value="franceses">Franceses</option>
+        	<option value="italianos">Italianos</option>
+        	<option value="japoneses">Japoneses</option>
+    		</select>
+			<input type="submit" value="enviar">
+			<figure>
+			<img src="imagenes/default.png" id="preview-image" width="200">
+			</figure>
+		</form>
+         
         <footer>
             <div class="informacion">
                 <h3>Información de la Empresa</h3>

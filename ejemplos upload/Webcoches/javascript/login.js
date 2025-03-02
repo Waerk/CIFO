@@ -16,3 +16,4 @@ function aleatorio(){
     videoPlayer.play();
 }
 window.onload = aleatorio;
+
